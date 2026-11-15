@@ -121,7 +121,7 @@ def main() -> None:
         num_train_epochs=args.epochs,
         learning_rate=args.lr,
         lr_scheduler_type="cosine",
-        warmup_ratio=0.05,
+        warmup_steps=0.05,
         fp16=True,
         logging_steps=5,
         save_strategy="no",
