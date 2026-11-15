@@ -1,6 +1,7 @@
 """Application settings, loaded from environment variables."""
 
 from functools import lru_cache
+from typing import Literal
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -12,6 +13,11 @@ class Settings(BaseSettings):
     app_version: str = "0.1.0"
     log_level: str = "INFO"
     cors_origins: list[str] = ["*"]  # In production, list your real domain.
+
+    director_backend: Literal["rules", "llm"] = "rules"
+    llm_model_id: str = "Qwen/Qwen2.5-1.5B-Instruct"
+    whisper_model_size: str = "small"
+    max_upload_mb: int = 10
 
     model_config = SettingsConfigDict(env_file=".env", env_prefix="STAGE_")
 

@@ -1,14 +1,22 @@
 """The 'director' decides how to react to a command.
 
-Today: simple rules. Milestone 2: replace with Whisper + Qwen.
-Keeping this separate means the API layer never changes when the brain does.
+Two implementations share the same shape (the Director protocol):
+- RuleBasedDirector: simple keyword rules (no GPU needed).
+- LLMDirector (llm_director.py): Qwen-powered.
 """
 
 import logging
+from typing import Protocol
 
 from stage_director.schemas import DirectResponse, LightingPreset
 
 logger = logging.getLogger(__name__)
+
+
+class Director(Protocol):
+    """Anything with a direct() method is a valid director."""
+
+    def direct(self, command: str) -> DirectResponse: ...
 
 
 class RuleBasedDirector:

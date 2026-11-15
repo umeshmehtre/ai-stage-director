@@ -10,6 +10,8 @@ class LightingPreset(str, Enum):
 
     NEUTRAL = "neutral"
     RED_ALERT = "red_alert"
+    BLUE_CALM = "blue_calm"
+    SPOTLIGHT = "spotlight"
 
 
 class DirectRequest(BaseModel):
@@ -34,3 +36,20 @@ class HealthResponse(BaseModel):
     status: str
     version: str
     gpu_available: bool
+
+
+class LLMOutput(BaseModel):
+    """The exact JSON shape we demand from the LLM."""
+
+    dialogue: str = Field(..., min_length=1, max_length=300)
+    lighting_preset: LightingPreset
+
+
+class TranscribeResponse(BaseModel):
+    transcript: str
+
+
+class VoiceDirectResponse(BaseModel):
+    transcript: str
+    direction: DirectResponse
+    latency_ms: int
