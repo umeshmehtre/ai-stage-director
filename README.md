@@ -2,35 +2,45 @@
 
 Voice-controlled 3D stage. Speech → text (Whisper) → structured JSON (Qwen2.5, LoRA fine-tuned) → speech (Kokoro) → Three.js stage.
 
-## Architecture
 ```
-Browser (frontend/index.html) ⇄ Cloudflare tunnel ⇄ FastAPI on Colab GPU
+Browser (frontend/index.html) ⇄ API ⇄ FastAPI
 mic → /stage → Whisper → Director (rules | Qwen) → Kokoro → {transcript, preset, audio, timings}
 ```
 
-## Quickstart (local, rules backend)
+## Run modes
+| Mode | Needs | Voice in | LLM | Voice out |
+|---|---|---|---|---|
+| Offline (laptop) | Python only | optional (`.[asr]` + ffmpeg) | keyword rules | no |
+| GPU (Colab) | T4 GPU | yes | fine-tuned Qwen | yes |
+| CPU (Docker / HF Space) | 8 GB+ RAM | yes (slow) | fine-tuned Qwen (slow) | yes |
+
+## Offline quickstart
 ```bash
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+python -m venv venv
+venv\Scripts\activate            # Linux/Mac: source venv/bin/activate
 pip install -e ".[dev]"
 pytest
-uvicorn stage_director.main:app --reload
+uvicorn stage_director.main:app --port 8000
 ```
-
-## Run with real models (GPU machine / Colab)
-```bash
-pip install -e ".[ml,tts]"
-apt-get install -y espeak-ng
-pip install kokoro soundfile   # on Python 3.13 add: --ignore-requires-python
-STAGE_DIRECTOR_BACKEND=llm STAGE_TTS_BACKEND=kokoro \
-  uvicorn stage_director.main:app --host 0.0.0.0 --port 8000
-```
-
-## Frontend
+In a second terminal:
 ```bash
 cd frontend && python -m http.server 5500
 ```
-Open http://localhost:5500, paste the API URL, then record or type a command.
+Open http://localhost:5500 and set the API URL to `http://localhost:8000`.
+
+Optional voice input on a laptop: `pip install -e ".[asr]"`, install ffmpeg, and set `STAGE_WHISPER_MODEL_SIZE=base`.
+
+## GPU quickstart (Colab T4)
+```bash
+pip install -e ".[ml,tts,gpu]"
+apt-get install -y espeak-ng
+# Kokoro's PyPI release caps Python < 3.13. On 3.13, install without dependency resolution:
+pip install --no-deps --ignore-requires-python kokoro misaki
+pip install loguru num2words addict espeakng-loader phonemizer-fork "spacy>=3.8,<4" soundfile
+python -m spacy download en_core_web_sm
+python scripts/colab_start.py --model models/qwen-stage-director
+```
+`colab_start.py` sets the NVIDIA library path Whisper needs, starts the server and prints a public URL.
 
 ## Fine-tuning (GPU required)
 ```bash
@@ -58,7 +68,9 @@ Test phrases are held out from training. The handwritten and hard sets are never
 |---|---|---|
 | STAGE_DIRECTOR_BACKEND | rules | `rules` or `llm` |
 | STAGE_LLM_MODEL_ID | Qwen/Qwen2.5-1.5B-Instruct | HF id or local path |
-| STAGE_WHISPER_MODEL_SIZE | small | Whisper size |
+| STAGE_WHISPER_MODEL_SIZE | small | `base` is faster on CPU |
+| STAGE_WHISPER_LANGUAGE | en | `hi` for Hindi, empty = auto-detect |
+| STAGE_WHISPER_TASK | transcribe | `translate` = speech to English text |
 | STAGE_TTS_BACKEND | none | `none` or `kokoro` |
 | STAGE_TTS_VOICE | af_heart | Kokoro voice |
 | STAGE_MAX_UPLOAD_MB | 10 | Upload limit |
@@ -77,13 +89,20 @@ Test phrases are held out from training. The handwritten and hard sets are never
 
 ## Docker
 ```bash
-docker build -t stage-director .
+docker build -t stage-director .                      # slim, rules backend
+docker build -f Dockerfile.full -t stage-director-full .   # CPU, voice + LLM + TTS
 docker run -p 8000:8000 stage-director
 ```
 
+## Known limitations
+- Training data is synthetic and covers 4 lighting presets only.
+- Free Colab gives a new public URL every session.
+- CPU inference of the 1.5B model takes seconds per reply.
+- Kokoro needs a manual install recipe on Python 3.13.
+
 ## Roadmap
-- [x] M1: API service, tests, Docker
-- [x] M2: Whisper + Qwen integration
-- [x] M3: LoRA fine-tuning + evaluation
-- [x] M4: Kokoro TTS + 3D front end
-- [ ] M5: MLflow tracking, Azure deployment notes
+- [x] M1 API, tests, Docker
+- [x] M2 Whisper + Qwen
+- [x] M3 LoRA fine-tuning + evaluation
+- [x] M4 Kokoro TTS + 3D front end
+- [ ] M5 MLflow tracking, monitoring, cloud deployment

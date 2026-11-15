@@ -25,7 +25,12 @@ def get_director() -> Director:
 def get_transcriber() -> Transcriber:
     from stage_director.services.transcriber import WhisperTranscriber
 
-    return WhisperTranscriber(get_settings().whisper_model_size)
+    settings = get_settings()
+    return WhisperTranscriber(
+        settings.whisper_model_size,
+        settings.whisper_language or None,
+        settings.whisper_task,
+    )
 
 
 @lru_cache

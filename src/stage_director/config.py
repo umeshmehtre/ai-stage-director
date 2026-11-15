@@ -16,7 +16,10 @@ class Settings(BaseSettings):
 
     director_backend: Literal["rules", "llm"] = "rules"
     llm_model_id: str = "Qwen/Qwen2.5-1.5B-Instruct"
+
     whisper_model_size: str = "small"
+    whisper_language: str = "en"  # empty string = auto-detect
+    whisper_task: Literal["transcribe", "translate"] = "transcribe"
     max_upload_mb: int = 10
 
     tts_backend: Literal["none", "kokoro"] = "none"

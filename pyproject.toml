@@ -19,19 +19,27 @@ dev = [
     "pytest>=8.0",
     "httpx>=0.27",
 ]
+# Light voice input only (CPU friendly, no PyTorch needed)
+asr = [
+    "faster-whisper>=1.0",
+]
+# Full stack: voice + LLM
 ml = [
     "faster-whisper>=1.0",
     "transformers>=4.44",
     "accelerate>=0.30",
-    "av>=13",
 ]
 train = [
     "peft>=0.11",
 ]
-# Kokoro itself is installed separately (see README) because its PyPI release
-# caps the Python version. soundfile is what we use to write WAV audio.
+# Kokoro itself is installed separately (see README): its PyPI release caps the Python version.
 tts = [
     "soundfile>=0.12",
+]
+# NVIDIA libraries Whisper needs on GPU machines (Colab). Not needed on CPU.
+gpu = [
+    "nvidia-cublas-cu12",
+    "nvidia-cudnn-cu12",
 ]
 
 [tool.setuptools.packages.find]
