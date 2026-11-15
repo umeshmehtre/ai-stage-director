@@ -1,4 +1,4 @@
-"""Generate train/test/handwritten JSONL files.
+"""Generate train/test/handwritten/hard JSONL files.
 
 Run from the repo root:  python scripts/generate_dataset.py
 """
@@ -7,6 +7,7 @@ import argparse
 from pathlib import Path
 
 from stage_director.training.dataset import HANDWRITTEN, build_splits, write_jsonl
+from stage_director.training.hard_set import HARD_TEST
 
 
 def main() -> None:
@@ -21,8 +22,12 @@ def main() -> None:
     write_jsonl(args.out_dir / "train.jsonl", train)
     write_jsonl(args.out_dir / "test.jsonl", test)
     write_jsonl(args.out_dir / "handwritten_test.jsonl", HANDWRITTEN)
+    write_jsonl(args.out_dir / "hard_test.jsonl", HARD_TEST)
 
-    print(f"train: {len(train)} | test: {len(test)} | handwritten: {len(HANDWRITTEN)}")
+    print(
+        f"train: {len(train)} | test: {len(test)} | "
+        f"handwritten: {len(HANDWRITTEN)} | hard: {len(HARD_TEST)}"
+    )
     print(f"Files written to {args.out_dir}/")
 
 

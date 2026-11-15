@@ -36,6 +36,8 @@ class HealthResponse(BaseModel):
     status: str
     version: str
     gpu_available: bool
+    director_backend: str
+    tts_backend: str
 
 
 class LLMOutput(BaseModel):
@@ -53,3 +55,28 @@ class VoiceDirectResponse(BaseModel):
     transcript: str
     direction: DirectResponse
     latency_ms: int
+
+
+class SpeakRequest(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    text: str = Field(..., min_length=1, max_length=300)
+
+
+class Timings(BaseModel):
+    """Milliseconds spent in each stage of the pipeline."""
+
+    asr_ms: int = 0
+    llm_ms: int = 0
+    tts_ms: int = 0
+    total_ms: int = 0
+
+
+class StageResponse(BaseModel):
+    """Everything the browser needs for one command."""
+
+    transcript: str
+    direction: DirectResponse
+    audio_base64: str | None = None
+    audio_mime: str = "audio/wav"
+    timings: Timings

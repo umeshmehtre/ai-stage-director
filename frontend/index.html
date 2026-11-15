@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Stage Director</title>
+<style>
+  :root { --bg:#0d0f14; --panel:#171a22; --line:#2a2f3c; --text:#e8eaf0; --muted:#8b91a3; --accent:#6ea8fe; --bad:#ff6b6b; }
+  * { box-sizing: border-box; }
+  body { margin:0; height:100vh; display:grid; grid-template-columns:1fr 340px; background:var(--bg); color:var(--text); font-family:system-ui,sans-serif; }
+  #stage { position:relative; min-width:0; }
+  #stage canvas { display:block; width:100%; height:100%; }
+  #badge { position:absolute; top:14px; left:14px; padding:6px 12px; border-radius:999px; background:rgba(0,0,0,.55); font-size:13px; letter-spacing:.04em; }
+  aside { background:var(--panel); border-left:1px solid var(--line); padding:16px; overflow-y:auto; display:flex; flex-direction:column; gap:14px; }
+  h1 { font-size:18px; margin:0; }
+  label { font-size:12px; color:var(--muted); display:block; margin-bottom:4px; }
+  input[type=text] { width:100%; padding:9px; border-radius:8px; border:1px solid var(--line); background:var(--bg); color:var(--text); }
+  button { padding:10px 12px; border:0; border-radius:8px; background:var(--accent); color:#0b1220; font-weight:600; cursor:pointer; }
+  button.secondary { background:transparent; color:var(--text); border:1px solid var(--line); }
+  button.rec { background:var(--bad); color:#fff; }
+  .row { display:flex; gap:8px; }
+  .row input { flex:1; }
+  #status { font-size:13px; color:var(--muted); min-height:18px; }
+  #status.error { color:var(--bad); }
+  .card { border:1px solid var(--line); border-radius:10px; padding:10px 12px; font-size:14px; }
+  .card b { color:var(--muted); font-weight:500; font-size:12px; display:block; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  td { padding:3px 0; } td:last-child { text-align:right; font-variant-numeric:tabular-nums; }
+  @media (max-width:800px) { body { grid-template-columns:1fr; grid-template-rows:55vh 1fr; } }
+</style>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+<div id="stage"><div id="badge">preset: neutral</div></div>
+
+<aside>
+  <h1>AI Stage Director</h1>
+
+  <div>
+    <label for="api">API URL (your .trycloudflare.com link)</label>
+    <div class="row">
+      <input id="api" type="text" placeholder="https://xxxx.trycloudflare.com">
+      <button id="test" class="secondary" type="button">Test</button>
+    </div>
+  </div>
+
+  <button id="mic" type="button">🎤 Start recording</button>
+
+  <form id="textForm" class="row">
+    <input id="cmd" type="text" placeholder="…or type: put a spotlight on me" autocomplete="off">
+    <button type="submit">Send</button>
+  </form>
+
+  <div id="status"></div>
+
+  <div class="card"><b>You said</b><span id="heard">—</span></div>
+  <div class="card"><b>Director replied</b><span id="reply">—</span></div>
+
+  <div class="card">
+    <b>Latency</b>
+    <table>
+      <tr><td>Speech to text</td><td id="t-asr">—</td></tr>
+      <tr><td>LLM</td><td id="t-llm">—</td></tr>
+      <tr><td>Text to speech</td><td id="t-tts">—</td></tr>
+      <tr><td><b style="display:inline">Total</b></td><td id="t-total">—</td></tr>
+    </table>
+  </div>
+</aside>
+
+<script type="module">
+import * as THREE from "three";
+
+/* ---------- 3D scene ---------- */
+const container = document.getElementById("stage");
+const badge = document.getElementById("badge");
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.shadowMap.enabled = true;
+container.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x101218);
+const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
+camera.position.set(0, 3, 9);
+camera.lookAt(0, 1.2, 0);
+
+const floor = new THREE.Mesh(
+  new THREE.CircleGeometry(6, 64),
+  new THREE.MeshStandardMaterial({ color: 0x777777, roughness: 0.9 })
+);
+floor.rotation.x = -Math.PI / 2;
+floor.receiveShadow = true;
+scene.add(floor);
+
+const wall = new THREE.Mesh(
+  new THREE.PlaneGeometry(14, 7),
+  new THREE.MeshStandardMaterial({ color: 0x555555, roughness: 1 })
+);
+wall.position.set(0, 3.5, -5);
+wall.receiveShadow = true;
+scene.add(wall);
+
+const performer = new THREE.Group();
+const skin = new THREE.MeshStandardMaterial({ color: 0xdddddd });
+const body = new THREE.Mesh(new THREE.CapsuleGeometry(0.4, 1.0, 8, 16), skin);
+body.position.y = 1.0;
+body.castShadow = true;
+const head = new THREE.Mesh(new THREE.SphereGeometry(0.32, 24, 24), skin);
+head.position.y = 2.05;
+head.castShadow = true;
+performer.add(body, head);
+scene.add(performer);
+
+const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+const key = new THREE.DirectionalLight(0xffffff, 1.0);
+key.position.set(3, 6, 5);
+key.castShadow = true;
+const spot = new THREE.SpotLight(0xffffff, 0, 20, Math.PI / 9, 0.4, 2);
+spot.position.set(0, 8, 2);
+spot.castShadow = true;
+spot.target.position.set(0, 1, 0);
+scene.add(ambient, key, spot, spot.target);
+
+/* ---------- Lighting presets (must match the API's LightingPreset values) ---------- */
+const PRESETS = {
+  neutral:   { bg: 0x101218, ambient: [0xffffff, 0.6],  key: [0xffffff, 1.0], spot: 0,   pulse: false },
+  red_alert: { bg: 0x2a0608, ambient: [0xff2020, 0.5],  key: [0xff1a1a, 1.4], spot: 0,   pulse: true  },
+  blue_calm: { bg: 0x061428, ambient: [0x3a6dff, 0.5],  key: [0x4d8bff, 0.7], spot: 0,   pulse: false },
+  spotlight: { bg: 0x050505, ambient: [0xffffff, 0.05], key: [0xffffff, 0.05], spot: 150, pulse: false },
+};
+let target = PRESETS.neutral;
+let speaking = false;
+const tmp = new THREE.Color();
+
+function applyPreset(name) {
+  target = PRESETS[name] ?? PRESETS.neutral;
+  badge.textContent = "preset: " + name;
+}
+
+function resize() {
+  const { clientWidth: w, clientHeight: h } = container;
+  renderer.setSize(w, h);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+}
+new ResizeObserver(resize).observe(container);
+resize();
+
+function animate(t) {
+  requestAnimationFrame(animate);
+  const k = 0.06; // smoothing: how fast lights fade to the target
+  scene.background.lerp(tmp.set(target.bg), k);
+  ambient.color.lerp(tmp.set(target.ambient[0]), k);
+  ambient.intensity = THREE.MathUtils.lerp(ambient.intensity, target.ambient[1], k);
+  key.color.lerp(tmp.set(target.key[0]), k);
+  const pulse = target.pulse ? 0.75 + 0.25 * Math.sin(t / 160) : 1;
+  key.intensity = THREE.MathUtils.lerp(key.intensity, target.key[1] * pulse, k);
+  spot.intensity = THREE.MathUtils.lerp(spot.intensity, target.spot, k);
+  performer.position.y = speaking ? Math.sin(t / 90) * 0.05 : 0;
+  renderer.render(scene, camera);
+}
+requestAnimationFrame(animate);
+
+/* ---------- API client ---------- */
+const $ = (id) => document.getElementById(id);
+const apiInput = $("api");
+apiInput.value = localStorage.getItem("apiUrl") || "";
+apiInput.addEventListener("change", () => localStorage.setItem("apiUrl", apiInput.value.trim()));
+
+function setStatus(message, isError = false) {
+  $("status").textContent = message;
+  $("status").className = isError ? "error" : "";
+}
+
+async function callApi(path, options = {}) {
+  const base = apiInput.value.trim().replace(/\/+$/, "");
+  if (!base) throw new Error("Paste your API URL first.");
+  const response = await fetch(base + path, options);
+  if (!response.ok) {
+    let detail = response.statusText;
+    try {
+      const body = await response.json();
+      detail = typeof body.detail === "string" ? body.detail : JSON.stringify(body.detail);
+    } catch { /* keep statusText */ }
+    throw new Error(`${response.status}: ${detail}`);
+  }
+  return response.json();
+}
+
+function render(data) {
+  // textContent (not innerHTML): model output is untrusted text.
+  $("heard").textContent = data.transcript;
+  $("reply").textContent = data.direction.dialogue;
+  const t = data.timings;
+  $("t-asr").textContent = t.asr_ms + " ms";
+  $("t-llm").textContent = t.llm_ms + " ms";
+  $("t-tts").textContent = t.tts_ms + " ms";
+  $("t-total").textContent = t.total_ms + " ms";
+  applyPreset(data.direction.lighting_preset);
+
+  if (data.audio_base64) {
+    const audio = new Audio(`data:${data.audio_mime};base64,${data.audio_base64}`);
+    speaking = true;
+    audio.onended = () => { speaking = false; };
+    audio.onerror = () => { speaking = false; };
+    audio.play().catch(() => { speaking = false; setStatus("Click the page once, then try again (browser blocked audio).", true); });
+  }
+}
+
+async function run(requestPromise) {
+  setStatus("Working… (the first request can take up to a minute)");
+  try {
+    render(await requestPromise);
+    setStatus("Done.");
+  } catch (error) {
+    setStatus("Error: " + error.message, true);
+  }
+}
+
+/* ---------- Controls ---------- */
+$("test").addEventListener("click", async () => {
+  try {
+    const h = await callApi("/health");
+    setStatus(`Connected. LLM: ${h.director_backend}, TTS: ${h.tts_backend}, GPU: ${h.gpu_available}`);
+  } catch (error) {
+    setStatus("Error: " + error.message, true);
+  }
+});
+
+$("textForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const command = $("cmd").value.trim();
+  if (!command) return;
+  run(callApi("/stage-text", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ command }),
+  }));
+});
+
+let recorder = null;
+$("mic").addEventListener("click", async () => {
+  const button = $("mic");
+  if (recorder && recorder.state === "recording") {
+    recorder.stop();
+    return;
+  }
+  let stream;
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  } catch {
+    setStatus("Microphone blocked. Open this page via http://localhost and allow the mic.", true);
+    return;
+  }
+  const chunks = [];
+  recorder = new MediaRecorder(stream);
+  recorder.ondataavailable = (e) => chunks.push(e.data);
+  recorder.onstop = () => {
+    stream.getTracks().forEach((track) => track.stop());
+    button.textContent = "🎤 Start recording";
+    button.classList.remove("rec");
+    const form = new FormData();
+    form.append("file", new Blob(chunks, { type: recorder.mimeType }), "command.webm");
+    run(callApi("/stage", { method: "POST", body: form }));
+  };
+  recorder.start();
+  button.textContent = "⏹ Stop and send";
+  button.classList.add("rec");
+  setStatus("Recording… speak your command, then press stop.");
+});
+</script>
+</body>
+</html>

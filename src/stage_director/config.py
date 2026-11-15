@@ -19,6 +19,9 @@ class Settings(BaseSettings):
     whisper_model_size: str = "small"
     max_upload_mb: int = 10
 
+    tts_backend: Literal["none", "kokoro"] = "none"
+    tts_voice: str = "af_heart"
+
     model_config = SettingsConfigDict(env_file=".env", env_prefix="STAGE_")
 
 

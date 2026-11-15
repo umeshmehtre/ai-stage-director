@@ -1,25 +1,38 @@
 """HTTP endpoints. Thin layer: validate input, call a service, return output."""
 
+import base64
 import logging
 import time
 
-from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, HTTPException, Response, UploadFile
 
-from stage_director.api.dependencies import get_director, get_transcriber
+from stage_director.api.dependencies import (
+    get_director,
+    get_synthesizer,
+    get_transcriber,
+)
 from stage_director.config import Settings, get_settings
 from stage_director.schemas import (
     DirectRequest,
     DirectResponse,
     HealthResponse,
+    SpeakRequest,
+    StageResponse,
+    Timings,
     TranscribeResponse,
     VoiceDirectResponse,
 )
 from stage_director.services.director import Director
 from stage_director.services.hardware import gpu_available
+from stage_director.services.synthesizer import Synthesizer
 from stage_director.services.transcriber import Transcriber
 
 logger = logging.getLogger(__name__)
 router = APIRouter()
+
+
+def _ms_since(start: float) -> int:
+    return int((time.perf_counter() - start) * 1000)
 
 
 def _read_and_transcribe(
@@ -47,12 +60,50 @@ def _read_and_transcribe(
     return text
 
 
+def _build_stage_response(
+    text: str,
+    asr_ms: int,
+    director: Director,
+    synthesizer: Synthesizer | None,
+    started: float,
+) -> StageResponse:
+    """Run director + TTS and assemble the full response with timings."""
+    llm_start = time.perf_counter()
+    direction = director.direct(text)
+    llm_ms = _ms_since(llm_start)
+
+    audio_b64 = None
+    tts_ms = 0
+    if synthesizer is not None:
+        tts_start = time.perf_counter()
+        try:
+            wav = synthesizer.synthesize(direction.dialogue)
+            audio_b64 = base64.b64encode(wav).decode("ascii")
+        except Exception:
+            # Lights still work even if the voice fails.
+            logger.exception("TTS failed. Returning response without audio.")
+        tts_ms = _ms_since(tts_start)
+
+    timings = Timings(
+        asr_ms=asr_ms, llm_ms=llm_ms, tts_ms=tts_ms, total_ms=_ms_since(started)
+    )
+    logger.info("stage finished: %s", timings.model_dump())
+    return StageResponse(
+        transcript=text,
+        direction=direction,
+        audio_base64=audio_b64,
+        timings=timings,
+    )
+
+
 @router.get("/health", response_model=HealthResponse, tags=["system"])
 def health(settings: Settings = Depends(get_settings)) -> HealthResponse:
     return HealthResponse(
         status="ok",
         version=settings.app_version,
         gpu_available=gpu_available(),
+        director_backend=settings.director_backend,
+        tts_backend=settings.tts_backend,
     )
 
 
@@ -85,8 +136,50 @@ def direct_voice(
     started = time.perf_counter()
     text = _read_and_transcribe(file, transcriber, settings)
     direction = director.direct(text)
-    latency_ms = int((time.perf_counter() - started) * 1000)
+    latency_ms = _ms_since(started)
     logger.info("direct-voice finished in %d ms", latency_ms)
     return VoiceDirectResponse(
         transcript=text, direction=direction, latency_ms=latency_ms
     )
+
+
+@router.post("/speak", tags=["voice"])
+def speak(
+    request: SpeakRequest,
+    synthesizer: Synthesizer | None = Depends(get_synthesizer),
+) -> Response:
+    """Text in, WAV audio out."""
+    if synthesizer is None:
+        raise HTTPException(status_code=503, detail="Text-to-speech is not enabled.")
+    try:
+        wav = synthesizer.synthesize(request.text)
+    except Exception:
+        logger.exception("TTS failed")
+        raise HTTPException(status_code=500, detail="Speech synthesis failed.")
+    return Response(content=wav, media_type="audio/wav")
+
+
+@router.post("/stage", response_model=StageResponse, tags=["stage"])
+def stage(
+    file: UploadFile = File(...),
+    transcriber: Transcriber = Depends(get_transcriber),
+    director: Director = Depends(get_director),
+    synthesizer: Synthesizer | None = Depends(get_synthesizer),
+    settings: Settings = Depends(get_settings),
+) -> StageResponse:
+    """Full pipeline: voice in, transcript + lighting + spoken reply out."""
+    started = time.perf_counter()
+    text = _read_and_transcribe(file, transcriber, settings)
+    asr_ms = _ms_since(started)
+    return _build_stage_response(text, asr_ms, director, synthesizer, started)
+
+
+@router.post("/stage-text", response_model=StageResponse, tags=["stage"])
+def stage_text(
+    request: DirectRequest,
+    director: Director = Depends(get_director),
+    synthesizer: Synthesizer | None = Depends(get_synthesizer),
+) -> StageResponse:
+    """Same as /stage, but the command is typed text (no ASR step)."""
+    started = time.perf_counter()
+    return _build_stage_response(request.command, 0, director, synthesizer, started)

@@ -27,6 +27,11 @@ ml = [
 train = [
     "peft>=0.11",
 ]
+# Kokoro itself is installed separately (see README) because its PyPI release
+# caps the Python version. soundfile is what we use to write WAV audio.
+tts = [
+    "soundfile>=0.12",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]
