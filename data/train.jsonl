@@ -1,0 +1,320 @@
+{"command": "Okay, dim and cool the lights now", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Okay, keep the lights as they are now", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Okay, thank you!", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Director, slow and calm mood right away", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Chill blue vibe please", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Okay, make it look like an alarm", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Please bathe the stage in blue please", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Hey director, we need emergency lighting", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Director, go blue!", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Quick: switch to red lighting for this scene", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Quick: dim and cool the lights for this scene", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Okay, light it up red right away", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Keep the lights as they are now", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Please good job everyone", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Lights back to standard!", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Okay, reset to default lighting for this scene", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Hey director, warning lights on right away", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Please bathe the stage in red now", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Director, light it up red now", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Take five everyone for this scene", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Quick: take five everyone right away", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Quick: spotlight the magician", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Quick: good job everyone right away", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Quick: bathe the stage in blue right away", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Quick: pin light on the host!", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Please bright focus on the star for this scene", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Director, warning lights on please", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Please bright focus on the star now", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Quick: single beam on center stage", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Quick: highlight the main character", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Quick: flood the stage with red now", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Quick: isolate the performer in light right away", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Narrow beam on the guitarist now", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Hey director, lights back to standard for this scene", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Okay, light it up red", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Quick: everything red please", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Hey director, reset to default lighting please", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Okay, isolate the performer in light now", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Quick: tranquil blue tones for this scene", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Hey director, narrow beam on the guitarist right away", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Okay, spotlight!", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Director, put the light on the lead singer please", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Quick: reset to default lighting", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Okay, narrow beam on the guitarist for this scene", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Make the lights blue", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Director, make the lights blue!", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Hey director, turn off the effects right away", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Shine a spotlight on the speaker!", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Make the lights blue right away", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Hey director, go blue right away", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Set the stage to calm blue right away", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Please single beam on center stage please", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Director, switch to blue lighting right away", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Director, lights back to standard", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Quick: what time is it now", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Director, reset to default lighting for this scene", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Director, set the stage to red for this scene", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Quick: light it up red for this scene", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Okay, how are you today", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Director, thank you!", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Okay, light up the soloist now", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Hey director, make it look like an alarm!", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Okay, turn off the effects now", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Director, quiet and peaceful lighting right away", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "What's your name for this scene", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Quick: trigger the red alert!", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "We need emergency lighting", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Director, keep the lights as they are right away", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Okay, cool blue ambience please", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Please put the light on the lead singer now", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Quick: bright focus on the star now", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Okay, bright focus on the star", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Please make it look like an alarm for this scene", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Switch to blue lighting now", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Quick: slow and calm mood for this scene", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Hey director, switch to red lighting!", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Director, soothing blue glow for this scene", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Okay, pin light on the host right away", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Quick: lights back to standard!", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Quick: light it up red now", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Director, light it up red right away", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Hey director, pin light on the host", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Okay, highlight the main character for this scene", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Light only the lead please", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Hey director, tell me a joke now", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "We need emergency lighting right away", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Okay, set the stage to calm blue please", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Director, good job everyone now", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Okay, spotlight please", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Hey director, how are you today right away", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Okay, make the stage feel like deep water please", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Director, what time is it please", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Quick: highlight the main character right away", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Okay, light it up red for this scene", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Okay, create a relaxing atmosphere", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Director, switch on the siren lights now", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Okay, emergency lights", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Tranquil blue tones right away", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Shine a spotlight on the speaker", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Single beam on center stage please", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Director, highlight the speaker please", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Director, good morning please", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Please switch on the siren lights", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Director, create a relaxing atmosphere please", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Give me soft blue lights please", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Quick: good job everyone!", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Quiet and peaceful lighting please", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Okay, good job everyone now", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Okay, spotlight the magician!", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Please make the stage feel like deep water please", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Quick: dim and cool the lights", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Director, trigger the red alert right away", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Please switch to blue lighting for this scene", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Okay, cool blue ambience right away", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Quick: turn off the effects for this scene", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Code red on stage", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Director, sound the alarm with red lights for this scene", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Quick: go blue now", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Hey director, slow and calm mood now", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Please who are you", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Switch on the siren lights", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Director, tell me a joke", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Good morning now", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Director, thank you right away", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Director, go blue now", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Hey director, switch on the siren lights right away", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Keep the lights as they are please", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Please shine a light on me alone for this scene", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Director, go blue please", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Okay, we need emergency lighting now", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Hey director, hello there now", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Quick: put the light on the lead singer for this scene", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Hey director, emergency lights right away", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Okay, tell me a joke right away", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Turn off the effects!", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Please make the lights red please", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Quick: narrow beam on the guitarist now", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Please light it up red for this scene", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Okay, make the stage feel like deep water for this scene", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Please turn off the effects now", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Who are you for this scene", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Hey director, who are you", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Okay, set the stage to calm blue!", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Okay, set the stage to red now", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Quick: thank you!", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Please switch on the siren lights now", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Please single beam on center stage", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Good morning please", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Chill blue vibe now", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Please what time is it right away", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Please we need emergency lighting", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Director, turn off the effects please", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Director, tell me a joke please", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Isolate the performer in light please", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Okay, create a relaxing atmosphere for this scene", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Hey director, emergency lights please", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Quick: reset to default lighting for this scene", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Please make the lights red!", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Please reset to default lighting!", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Please switch to blue lighting!", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Director, tell me a joke right away", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Okay, bathe the stage in blue!", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Hey director, spotlight", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Okay, make the lights red now", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Okay, who are you", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Okay, trigger the red alert!", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Warning lights on for this scene", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Director, chill blue vibe right away", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Spotlight on the dancer", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Please soothing blue glow please", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Bathe the stage in blue please", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Hey director, what's your name now", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Okay, bathe the stage in blue", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Director, hello there right away", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Director, set the stage to red!", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Okay, give me soft blue lights", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Please sound the alarm with red lights please", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Please warning lights on please", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Single beam on center stage for this scene", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Please put the light on the lead singer please", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Okay, narrow beam on the guitarist now", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Quick: make the stage feel like deep water now", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Quick: good morning please", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Quick: pin light on the host right away", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Hey director, light only the lead", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Make the lights red", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Make the lights red right away", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Please code red on stage right away", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Make the stage feel like deep water right away", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Please flood the stage with red right away", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Quick: slow and calm mood right away", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Okay, shine a light on me alone!", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Lights back to standard please", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Hey director, we need emergency lighting for this scene", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Please everything red please", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Hey director, everything red now", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Okay, turn off the effects", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Hey director, cool blue ambience please", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Quick: check the microphone please", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Hey director, set the stage to calm blue!", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Please spotlight please", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Turn off the effects", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Okay, light it up red please", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Give me soft blue lights now", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Hey director, good morning for this scene", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Quick: set the stage to calm blue right away", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Quick: bathe the stage in red", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Hey director, check the microphone for this scene", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Make it look like an alarm!", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Please pin light on the host now", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Director, tranquil blue tones now", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Director, cool blue ambience please", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Hey director, make it look like an alarm for this scene", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Director, slow and calm mood", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Director, highlight the main character now", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Quick: switch on the siren lights for this scene", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Please code red on stage", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Hey director, put the light on the lead singer", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Okay, how are you today now", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Hey director, bathe the stage in red for this scene", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Quick: draw attention to the performer please", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Okay, good job everyone right away", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Okay, light up the soloist please", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Okay, light up the soloist!", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Okay, isolate the performer in light for this scene", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Quick: hello there!", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Hey director, light only the lead please", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Pin light on the host now", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Okay, bright focus on the star right away", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Okay, trigger the red alert right away", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Director, switch to blue lighting", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Okay, code red on stage right away", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Director, clear all lighting effects please", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Director, make the lights red please", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Director, give me soft blue lights please", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Please highlight the speaker", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Okay, good morning", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Director, everything red now", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Director, bright focus on the star", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Highlight the speaker for this scene", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Okay, take five everyone right away", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Quick: good morning for this scene", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Director, narrow beam on the guitarist please", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Light only the lead now", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Switch to blue lighting please", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Lights back to standard", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Switch to blue lighting", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Quick: clear all lighting effects for this scene", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Hey director, we need emergency lighting right away", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Director, put the light on the lead singer!", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Please spotlight right away", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Quick: draw attention to the performer", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Quick: light only the lead right away", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Director, create a relaxing atmosphere right away", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Trigger the red alert", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Hey director, quiet and peaceful lighting right away", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Please narrow beam on the guitarist!", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Hey director, light it up red please", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Hello there for this scene", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Give me soft blue lights for this scene", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Director, tell me a joke for this scene", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Okay, take five everyone for this scene", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Okay, give me soft blue lights please", "preset": "blue_calm", "dialogue": "Easing into a calm blue glow."}
+{"command": "Light it up red now", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Quick: take five everyone please", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Please spotlight on the dancer now", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Hey director, quiet and peaceful lighting!", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Quick: chill blue vibe now", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Please narrow beam on the guitarist right away", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Okay, make the stage feel like deep water", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Director, highlight the speaker!", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Please turn off the effects right away", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Director, single beam on center stage for this scene", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Director, spotlight for this scene", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Director, we need emergency lighting for this scene", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Director, dim and cool the lights right away", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Quick: clear all lighting effects right away", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Please bright focus on the star please", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Light it up red please", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Check the microphone now", "preset": "neutral", "dialogue": "Standing by for your next command."}
+{"command": "Isolate the performer in light", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Give me soft blue lights!", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Quick: highlight the speaker please", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Please chill blue vibe please", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Switch on the siren lights!", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Hey director, hello there!", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Slow and calm mood right away", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Quick: light only the lead please", "preset": "spotlight", "dialogue": "Spotlight on!"}
+{"command": "Hey director, make it look like an alarm right away", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Director, give me soft blue lights right away", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Director, make the lights blue right away", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Please quiet and peaceful lighting!", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Quick: how are you today now", "preset": "neutral", "dialogue": "Okay, lights stay as they are."}
+{"command": "Spotlight for this scene", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Director, what's your name!", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Quiet and peaceful lighting for this scene", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Okay, flood the stage with red!", "preset": "red_alert", "dialogue": "Going red, stay alert!"}
+{"command": "Hey director, shine a light on me alone for this scene", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Please spotlight on the dancer for this scene", "preset": "spotlight", "dialogue": "All eyes on stage center."}
+{"command": "Director, single beam on center stage right away", "preset": "spotlight", "dialogue": "Putting the spotlight on the performer."}
+{"command": "Okay, switch to blue lighting!", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Okay, sound the alarm with red lights", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Quick: narrow beam on the guitarist", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Switch on the siren lights please", "preset": "red_alert", "dialogue": "Switching to red alert!"}
+{"command": "Director, we need emergency lighting now", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Hey director, create a relaxing atmosphere please", "preset": "blue_calm", "dialogue": "Setting a calm blue mood."}
+{"command": "Hey director, cool blue ambience!", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Put the light on the lead singer", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Please make the lights red right away", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Quick: light it up red!", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Hey director, highlight the speaker right away", "preset": "spotlight", "dialogue": "Focusing the light, you're on."}
+{"command": "Hey director, paint the stage red for this scene", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Quick: slow and calm mood now", "preset": "blue_calm", "dialogue": "Blue ambience coming up."}
+{"command": "Okay, gentle moonlight on stage for this scene", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Please gentle moonlight on stage", "preset": "blue_calm", "dialogue": "Cool blue lighting, nice and peaceful."}
+{"command": "Director, switch on the siren lights please", "preset": "red_alert", "dialogue": "Emergency lighting is on."}
+{"command": "Please flood the stage with red for this scene", "preset": "red_alert", "dialogue": "Red alert activated."}
+{"command": "Okay, check the microphone!", "preset": "neutral", "dialogue": "Got it, director."}
+{"command": "Director, take five everyone", "preset": "neutral", "dialogue": "Understood, keeping the lighting neutral."}
+{"command": "Please spotlight the magician!", "preset": "spotlight", "dialogue": "Spotlight on!"}

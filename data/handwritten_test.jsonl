@@ -1,0 +1,10 @@
+{"command": "Turn the lights red", "preset": "red_alert"}
+{"command": "Spotlight on the lead actor", "preset": "spotlight"}
+{"command": "Make it calm and blue", "preset": "blue_calm"}
+{"command": "Back to normal lighting", "preset": "neutral"}
+{"command": "Red alert!", "preset": "red_alert"}
+{"command": "Focus light on center stage", "preset": "spotlight"}
+{"command": "I want a peaceful ocean mood", "preset": "blue_calm"}
+{"command": "Danger, emergency lighting", "preset": "red_alert"}
+{"command": "Hello, how are you?", "preset": "neutral"}
+{"command": "Highlight the singer in the center", "preset": "spotlight"}

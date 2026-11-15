@@ -33,7 +33,8 @@ class LLMDirector:
         )
         logger.info("LLM loaded")
 
-    def _generate(self, command: str) -> str:
+    def generate_raw(self, command: str) -> str:
+        """Return the model's raw text for a command (no parsing, no fallback)."""
         messages = [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": command},
@@ -53,7 +54,7 @@ class LLMDirector:
 
     def direct(self, command: str) -> DirectResponse:
         logger.info("LLM received command: %s", command)
-        raw = self._generate(command)
+        raw = self.generate_raw(command)
         logger.debug("Raw LLM output: %s", raw)
 
         try:
